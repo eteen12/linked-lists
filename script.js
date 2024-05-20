@@ -70,6 +70,26 @@ class LinkedList {
         }
         return current;
     }
+    pop(){
+        if(!this.head){
+            return null;
+        }
+        let current = this.head;
+        let previous = null;
+        //this is how im going to traverse to the last node in this linked list
+        while(current.next !== null){
+            previous = current;
+           current = current.next;
+        }
+        //this is if there is only one node in the list
+        if(previous === null){
+            this.head = null;
+        }else{
+            previous.next = null;
+        }
+        this.length--;
+        return current;
+    }
    
 } 
 
@@ -81,10 +101,7 @@ list.append(5);
 list.append(10);
 list.prepend(14);
 console.log(list);
-const headNode = list.getHead();
-console.log(headNode);
-const tailNode = list.getTail();
-console.log(tailNode);
-const nodeAt = list.at(1);
-console.log(nodeAt);
+let pop = list.pop();
+console.log(pop);
+console.log(list);
 /* eslint-enable */
