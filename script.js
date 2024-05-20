@@ -15,6 +15,14 @@ class LinkedList {
     append(data){
         const node = new Node(data);
         if(this.head === null) this.head = node;
+        else{
+            let current = this.head;
+            while(current.next != null){
+                current = current.next;
+            }
+            current.next = node;
+        }
+        this.length ++;
     }
 } 
 
@@ -22,6 +30,7 @@ class LinkedList {
 
 
 const list = new LinkedList();
-list.append(4);
+list.append(5);
+list.append(10);
 console.log(list);
 /* eslint-enable */
