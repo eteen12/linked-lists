@@ -90,6 +90,19 @@ class LinkedList {
         this.length--;
         return current;
     }
+    find(value){
+        let current = this.head;
+        let index=0;
+
+        while (current !== null){
+            if(current.data === value){
+                return index;
+            }
+            current = current.next;
+            index++;
+        }
+        return null;
+    }
    
 } 
 
@@ -100,8 +113,8 @@ const list = new LinkedList();
 list.append(5);
 list.append(10);
 list.prepend(14);
+let find = list.find(10);
+console.log(find);
 console.log(list);
-let pop = list.pop();
-console.log(pop);
-console.log(list);
+
 /* eslint-enable */
