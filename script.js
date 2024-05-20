@@ -116,6 +116,31 @@ class LinkedList {
 
         return result;
     }
+    insertAt(value, index){
+        if(index < 0 || index > this.length){
+            return false;
+        }
+        const newNode = new Node(value);
+
+        if (index === 0){
+            newNode.next = this.head;
+            this.head = newNode;
+        }else{
+            let current = this.head;
+            let previous = null;
+            let count = 0;
+
+            while(count< index){
+                previous = current;
+                current = current.next;
+                count++;
+            }
+            newNode.next = current;
+            previous.next = newNode;
+        }
+        this.length++;
+        return true;
+    }
    
 } 
 
@@ -126,8 +151,9 @@ const list = new LinkedList();
 list.append(5);
 list.append(10);
 list.prepend(14);
-let find = list.find(10);
-console.log(find);
+
+list.insertAt(2,0);
+
 let string = list.toString();
 console.log(string);
 
