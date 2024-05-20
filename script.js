@@ -38,6 +38,14 @@ class LinkedList {
         }
         return false; // if the number is not there.
     }
+    getHead(){
+        if(this.head){
+            console.log(`head: ${this.head.data}`)
+        }else{
+            console.log("this is a empty list bud.")
+        }
+        
+    }
    
 } 
 
@@ -49,4 +57,6 @@ list.append(5);
 list.append(10);
 list.prepend(14);
 console.log(list);
+const headNode = list.getHead();
+console.log(headNode);
 /* eslint-enable */
