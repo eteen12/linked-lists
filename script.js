@@ -24,6 +24,12 @@ class LinkedList {
         }
         this.length ++;
     }
+    prepend(data){
+        const node = new Node(data);
+        node.next = this.head;
+        this.head = node;
+        this.length ++;
+    }
     contains(value){
         let current = this.head;
         while(current != null ){
@@ -32,7 +38,7 @@ class LinkedList {
         }
         return false; // if the number is not there.
     }
-    
+   
 } 
 
 
@@ -41,6 +47,6 @@ class LinkedList {
 const list = new LinkedList();
 list.append(5);
 list.append(10);
-console.log(list.contains(4));
+list.prepend(14);
 console.log(list);
 /* eslint-enable */
