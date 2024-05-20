@@ -24,6 +24,15 @@ class LinkedList {
         }
         this.length ++;
     }
+    contains(value){
+        let current = this.head;
+        while(current != null ){
+            if(current.data === value) return true;
+            current = current.next; //this is needed in order to traverse throught the list.
+        }
+        return false; // if the number is not there.
+    }
+    
 } 
 
 
@@ -32,5 +41,6 @@ class LinkedList {
 const list = new LinkedList();
 list.append(5);
 list.append(10);
+console.log(list.contains(4));
 console.log(list);
 /* eslint-enable */
