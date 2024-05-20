@@ -46,6 +46,16 @@ class LinkedList {
         }
         
     }
+    getTail(){
+        if(!this.head){
+            return null;
+        }
+        let current = this.head;
+        while (current.next !== null){
+            current = current.next;
+        }
+        return current;
+    }
    
 } 
 
@@ -59,4 +69,6 @@ list.prepend(14);
 console.log(list);
 const headNode = list.getHead();
 console.log(headNode);
+const tailNode = list.getTail();
+console.log(tailNode);
 /* eslint-enable */
