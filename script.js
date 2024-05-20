@@ -56,6 +56,20 @@ class LinkedList {
         }
         return current;
     }
+    at(index){
+        if(index <0 || index > this.length){
+            return null;
+        }
+
+        let current = this.head;
+        let count = 0;
+
+        while (count < index){
+            current = current.next;
+            count ++;
+        }
+        return current;
+    }
    
 } 
 
@@ -71,4 +85,6 @@ const headNode = list.getHead();
 console.log(headNode);
 const tailNode = list.getTail();
 console.log(tailNode);
+const nodeAt = list.at(1);
+console.log(nodeAt);
 /* eslint-enable */
