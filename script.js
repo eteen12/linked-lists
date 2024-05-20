@@ -103,6 +103,19 @@ class LinkedList {
         }
         return null;
     }
+    toString(){
+        let result = '';
+        let current = this.head;
+
+        while (current !== null){
+            result += `(${current.data}) -> `;
+            current = current.next;
+        }
+
+        result += 'null';
+
+        return result;
+    }
    
 } 
 
@@ -115,6 +128,7 @@ list.append(10);
 list.prepend(14);
 let find = list.find(10);
 console.log(find);
-console.log(list);
+let string = list.toString();
+console.log(string);
 
 /* eslint-enable */
