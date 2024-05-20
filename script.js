@@ -141,6 +141,31 @@ class LinkedList {
         this.length++;
         return true;
     }
+    removeAt(index){
+        if(index < 0 || index >= this.length || !this.head){
+            return null;
+        }
+       let removedNode;
+
+       if(index === 0){
+        removedNode = this.head;
+        this.head = this.head.next;
+       }else{
+        let current = this.head;
+        let previous = null;
+        let count = 0;
+
+        while(count < index){
+            previous = current;
+            current = current.next;
+            count++;
+        }
+        removedNode = current;
+        previous.next = current.next;
+       }
+       this.length--;
+       return removedNode;
+    }
    
 } 
 
@@ -155,6 +180,10 @@ list.prepend(14);
 list.insertAt(2,0);
 
 let string = list.toString();
+console.log(string);
+
+list.removeAt(2);
+string = list.toString();
 console.log(string);
 
 /* eslint-enable */
